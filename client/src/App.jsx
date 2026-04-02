@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/Layout';
 import LandingPage from './pages/LandingPage';
 import UploadPage from './pages/UploadPage';
@@ -14,6 +15,7 @@ function App() {
           <Route path="result" element={<ResultPage />} />
         </Route>
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
