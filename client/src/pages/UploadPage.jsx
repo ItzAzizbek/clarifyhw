@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Upload, FileText, X, Image as ImageIcon, ArrowRight, Sparkles } from 'lucide-react';
+import { buildApiUrl } from '../config/environment';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -100,7 +101,7 @@ function UploadPage() {
       setIsSubmitting(true);
       setErrorMessage('');
 
-      const response = await fetch('/api/explain', {
+      const response = await fetch(buildApiUrl('/api/explain'), {
         method: 'POST',
         body: formData,
       });
